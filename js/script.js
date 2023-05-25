@@ -12,8 +12,9 @@ const render = function () {
     todoCompleted.innerHTML = '';
 
 
-    toDoData = JSON.parse(localStorage.getItem('todoList'));
-    toDoData.forEach(function (item) {
+    let toDoDataLocal = JSON.parse(localStorage.getItem('todoList')) || [];
+    toDoDataLocal.forEach(function (item) {
+        //toDoData.forEach(function (item) {
         const li = document.createElement('li');
         li.classList.add('todo-item');
         li.innerHTML = '<span class="text-todo">' + item.text + '</span>' +
